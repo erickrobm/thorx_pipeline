@@ -13,7 +13,7 @@ LUNG_OPACITY_PATH = BASE_DIR + "/COVID-19_Radiography_Dataset/Lung_Opacity/image
 NORMAL_PATH = BASE_DIR + "/COVID-19_Radiography_Dataset/Normal/images/"
 
 MODEL_PATH = BASE_DIR + "/models/"
-MODEL_NAME = "VGG16_8020_224_192"
+MODEL_NAME = "VGG16_8020_64_3072_MODULE30"
 
 ACCURACY_PATH = BASE_DIR + "/reports/accuracy/"
 LOSS_PATH = BASE_DIR + "/reports/loss/"
@@ -29,6 +29,7 @@ CLASSES = [
     "COVID-19",
     "NORMAL",
     "Viral Pneumonia",
+    "No Coincide",
 ]
 
 SAMPLES = 64
@@ -37,13 +38,13 @@ TEST_SIZE = 0.2
 VALIDATION_SIZE = 0.15
 VALIDATION_SPLIT = 0.15
 
-IMG_RESOLUTION = (224, 224)
-WIDTH = 224
-HEIGHT = 224
+IMG_RESOLUTION = (64, 64)
+WIDTH = 64
+HEIGHT = 64
 
 ROTATION_RANGE = 15
 BS = 32
-EPOCHS = 50
+EPOCHS = 30
 
 SEED = 42
 SEED_MODEL = 42
@@ -52,3 +53,4 @@ SEED_VALIDATION = 82
 
 INIT_LR = 1e-3
 DECAY = 1e-6
+
