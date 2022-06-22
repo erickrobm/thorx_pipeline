@@ -29,11 +29,14 @@ file_handler = logging.FileHandler("thorx_predictions.log")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
+
 class PredictionInput(BaseModel):
     image_path: str
 
+
 class PredictionOutput(BaseModel):
     prediction: str
+
 
 class ThorXModel:
     def load_model(self):
@@ -102,8 +105,10 @@ class ThorXModel:
         logger.info(f"Prediction:{json.dumps(results)}")
         return PredictionOutput(prediction=model_prediction)
 
+
 app = FastAPI()
 thorx_model = ThorXModel()
+
 
 @app.post("/prediction")
 async def prediction(
@@ -111,9 +116,8 @@ async def prediction(
 ) -> PredictionOutput:
     return output
 
+
 @app.on_event("startup")
 async def startup():
     # Possible Log: Try and Except
     thorx_model.load_model()
-
-
