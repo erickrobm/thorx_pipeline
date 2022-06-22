@@ -1,0 +1,217 @@
+:root{
+    --title-color: #0B0A0A;
+    --forum-bgn: rgba(255, 255, 255, 0.2);
+    --checkbox: rgb(167, 167, 167);
+    --submit: #403A3A;
+    --hr:var(--checkbox);
+    --body-font: 'Poppins', sans-serif;
+    --body-color: #FCFCFC;
+    --alerta: rgba(6, 181, 12, 0.642);
+    --error: rgba(228, 8, 8, 0.76);
+}
+
+body.dark-theme{
+    --title-color: #F2F2F2;
+    --forum-bgn: rgba(255, 255, 255, 0.2);
+    --body-color: #2B2B2B;
+    --checkbox: rgb(201, 201, 201);
+    --submit: #0B0A0A;
+    --hr: gray;
+}
+
+main{
+    flex-wrap: wrap;
+}
+
+.main__content{
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    padding: 3rem;
+    position: relative;
+}
+
+.middle__content{
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 3rem;
+    position: relative;
+}
+
+.text__information-cover{
+    top: 50;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text__information-cover h1{
+    font-size: 50px;
+}
+
+.text__information-cover p{
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.text__information-cover p a{
+    color: blueviolet;
+}
+
+/*========== SECCIÓN QUE CONTIENE LAS 3 TARJETAS ==========*/
+.container__cards{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+/* MÁRGENES DE CADA CARTA Y TIPOGRAFÍA */
+.card{
+    width: 350px;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    /* EFECTO DE CRISTAL */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+/* AL PASAR EL MOUSE POR LAS IMAGENES ESTAS SE HACEN GRANDES */
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card:hover .top__card img{
+    transform: scale(1.1);
+}
+
+/* PROPIEDADES DENTRO DE LAS CARTAS */
+.card h2{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card p{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.card hr{
+    margin-top: 30px;
+    border: none;
+    height: 0.2px;
+}
+
+/* DISEÑO DE CADA CARTA DE LA PARTE SUPERIOR (IMAGEN) */
+.top__card{
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* AJUSTAR ANCHO DE LAS IMGS PORQUE A VECES NO LLENAN EL TAMAÑO */
+.top__card img{
+    width: 110%;
+    transition: all 300ms;
+}
+
+/* DISEÑO DE CADA CARTA DE LA PARTE INFERIOR */
+.footer__card{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__card h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* DISEÑO Y FUNCIONALIDAD PARA BOTÓN DESCARGAR */
+.image__test {
+    width: 100%;
+    height: 50px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.image__test input{
+    height: 100%;
+    width: 45%;
+    outline: none;
+    color: var(--submit);
+    border: none;
+    background-color: var(--checkbox);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.image__test input:hover{
+    box-shadow: 3px 3px 7px gray;
+    transform: scale(1.05);
+}
+
+/* SECCIÓN RESPONSIVE PARA LAS TARJETAS */
+@media screen and (max-width:1200px){
+    .main__content{
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    .middle__content{
+        position: relative;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .text__information-cover{
+        top: 0;
+        text-align: center;
+    }
+    
+    .text__information-cover h1{
+        font-size: 50px;
+    }
+    
+    .text__information-cover p{
+        font-size: 22px;
+        margin-top: 50px;
+    }
+
+    .container__cards{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+
+    .image__test {
+        margin-top: 20px;
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        text-align: center;
+    }
+}

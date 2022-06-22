@@ -1,0 +1,497 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colores ==========*/
+  --title-color: #0B0A0A;
+  --text-color: #403A3A;
+  --text-color-light: #707070;
+  --container-color: #FAFAFA;
+  --container-color-alt: #F0EFEF;
+  --body-color: #FCFCFC;
+
+  /*========== Fuente y Tamaños ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+
+  /*========== Grosor de la Letra ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --title-color: #F2F2F2;
+  --text-color: #BFBFBF;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2B2B2B;
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  position: absolute;
+  right: 2.2rem;
+  top: 2.2rem;
+  display: flex;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.change-theme:hover{
+  color: var(--title-color);
+}
+
+/*========== Tamaño de Letras al momento de Hacer mucho Zoom Out al documento ==========*/
+body.scale-report{
+  --h1-font-size: .938rem;
+  --h2-font-size: .938rem;
+  --h3-font-size: .975rem;
+  --normal-font-size: .813rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .68rem;
+}
+
+/*========== Generar el boton para descargar PDF en escritorio y disp. moviles ==========*/
+.generate-pdf{
+  display: inline-block;
+  position: absolute;
+  top: 2.2rem;
+  left: 2.2rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.generate-pdf:hover{
+  color: var(--title-color);
+}
+
+/*========== Al momento de generar el PDF, se remueven estos iconos y botones del documento ==========*/
+.scale-report .change-theme,
+.scale-report .generate-pdf{
+  display: none;
+}
+
+/*========== Clases que ayudan a reducir el HTML a papel tamaño A4 ==========*/
+.scale-report .bd-container{
+  max-width: 595px;
+}
+
+.scale-report .section{
+  padding: 1.25rem 0 .80rem;
+}
+
+.scale-report .section-title{
+  margin-bottom: .75rem;
+}
+
+.scale-report .resume{
+  padding: 0 1rem;
+}
+
+.scale-report .inicio__container{
+  gap: 1.5rem;
+}
+
+.scale-report .inicio__data{
+  gap: .25rem;
+}
+
+.scale-report .advise__description,
+.scale-report .birthday__container,
+.scale-report .sex__container,
+.scale-report .email__container,
+.scale-report .country__container,
+.scale-report .diagnostic__container{
+  gap: .75rem;
+}
+
+.scale-report .birthday__icon,
+.scale-report .sex__icon,
+.scale-report .email__icon,
+.scale-report .country__icon,
+.scale-report .diagnostic__icon{
+  font-size: 1rem;
+}
+
+/*========== Tipografía y espaciado ==========*/
+body{
+  margin: 0 0 var(--header-height) 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,h2,h3,ul,p{
+  margin: 0;
+}
+
+h1,h2,h3{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul{ 
+  padding: 0;
+  list-style: none;
+}
+
+a{ 
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%; 
+  height: auto;
+}
+
+/*========== CLASS CSS ==========*/
+.section{
+  padding: 1.5rem 0;
+}
+
+.section-title{ /*========== Esta seccion es para el nombre de la persona ==========*/
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+  text-align: center;
+  margin-top: var(--mb-1);
+  margin-bottom: var(--mb-1);
+}
+
+/*========== LAYOUT ==========*/
+.bd-container{
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+}
+
+.mb-grid{
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 -1px 4px rgba(0,0,0,.1);
+  transition: .3s;
+}
+
+/*========== NAV ==========*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__menu{
+  box-shadow: 0 -1px 4px var(--title-color);
+}
+
+@media screen and (max-width: 968px){ /*========== Menu desplegable (Disp. Moviles) ==========*/
+  .nav__menu{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    border-radius: 1rem 1rem 0 0;
+    z-index: var(--z-fixed);
+    transition: .3s;
+  }
+}
+
+.nav__logo,
+.nav__toggle{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__toggle{
+  font-size: 1.2rem;
+  cursor: pointer; 
+}
+
+.nav__item{ 
+  text-align: center;
+}
+
+.nav__list{ /* Acomoda el menu de forma espaciada y en 7 cuadros (Disp. Moviles) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav__link{ /* Cambia color de las letras e iconos de menu, hace mas pequeña la letra y hace cuadros proporcionales (Disp. Moviles) */
+  display: flex;
+  flex-direction: column;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  font-weight: var(--font-medium);
+}
+
+.nav__link:hover{ /* Al pasar el cursor cambia de color las opciones del menu (Disp. Moviles) */
+  color: var(--title-color);
+}
+
+.nav__icon{
+  font-size: 0.8rem; /* Espaciado entre el icono y el texto de la opcion del menu (Disp. Moviles) */
+  margin-bottom: var(--mb-1);
+}
+
+/* Desplegar Menu en Dispositivos Moviles */
+.show-menu{ /* Permite que el menu se despliegue hacia arriba o abajo por la funcion "showMenu" en el archivo .js (Disp. Moviles) */
+  bottom: var(--header-height);
+}
+
+/* Active menu link */
+.active-link{
+  color: var(--title-color);
+}
+
+/*========== INICIO ==========*/
+.inicio{
+  position: relative;
+}
+
+.inicio__container{
+  gap: 3rem;
+}
+
+.logo__data{
+  gap: .5rem;
+  text-align: center;
+}
+
+.logo__img{
+  width: 150px;
+  justify-self: center;
+}
+
+.inicio__data{
+  gap: .5rem;
+  text-align: center;
+}
+
+.inicio__title{
+  font-size: var(--h1-font-size);
+}
+
+/*========== AVISO ==========*/
+.advise__description{
+  text-align: center;
+}
+
+/*========== FECHA DE CUMPLEAÑOS ==========*/
+.birthday__container{
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.birthday__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.birthday__icon{
+  font-size: 1rem;
+  margin-right: .25rem;
+}
+
+/*========== SEXO ==========*/
+.sex__container{
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.sex__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.sex__icon{
+  font-size: 1rem;
+  margin-right: .25rem;
+}
+
+/*========== CORREO ELECTRONICO ==========*/
+.email__container{
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.email__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.email__icon{
+  font-size: 1rem;
+  margin-right: .25rem;
+}
+  
+/*========== PAIS DE NACIMIENTO ==========*/
+.country__container{
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.country__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.country__icon{
+  font-size: 1rem;
+  margin-right: .25rem;
+}
+  
+/*========== DIAGNOSTICO ==========*/
+.diagnostic__detail{
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  text-align: center;
+}
+
+.diagnostic__container{
+  gap: .5rem;
+  text-align: center;
+}
+
+.diagnostic__img{
+  width: 300px;
+  height: 300px;
+  justify-self: center;
+  box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+}
+
+.diagnostic__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.diagnostic__icon{
+  font-size: 1rem;
+  margin-right: .25rem;
+}
+
+/*========== FECHAS ==========*/
+.current__date{
+  display: flexbox;
+}
+
+.date__info, .time__info{
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* SCROLL HACIA ARRIBA*/
+.scrolltop{
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .3rem;
+  background-color: var(--container-color-alt);
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+  visibility: hidden;
+}
+
+.scrolltop__icon{
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.show-scroll{ /* Aparece flecha hacia arriba cuando nos desplazamos hacia abajo */
+  visibility: visible;
+  bottom: 5rem;
+}
+
+/*========== MEDIA QUERIES ==========*/
+/* Para dispositivos muchisimo más pequeños, el menu se convierte en dos columnas */
+@media screen and (max-width: 320px){
+  .nav__list{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem .5rem;
+  }
+}
+
+/* CLASES PARA LA VERSION EN COMPUTADORA */
+@media screen and (min-width: 968px){
+  body{
+    margin: 3rem 0;
+  }
+
+  .bd-container{ 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l-header,
+  .scrolltop{ /* Remueve el Menu de Dispositivos Moviles y la Flecha de Scroll*/
+    display: none;
+  }
+
+  .resume{ /* Sección donde se denota el contorno de la hoja en el html*/
+    display: grid;
+    box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+    background-color: var(--container-color);
+  }
+
+  .inicio__container{
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,441 @@
+/*========== COLORES DE CONTENEDOR / CAMBIARLOS DESPUÉS AL PRINCIPAL ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --title-color: #0B0A0A;
+    --forum-bgn: rgba(255, 255, 255, 0.2);
+    --checkbox: rgb(167, 167, 167);
+    --submit: #403A3A;
+    --hr:var(--checkbox);
+    --body-font: 'Poppins', sans-serif;
+    --body-color: #FCFCFC;
+    --alerta: rgba(6, 181, 12, 0.642);
+    --error: rgba(228, 8, 8, 0.76);
+}
+
+body.dark-theme{
+    --title-color: #F2F2F2;
+    --forum-bgn: rgba(255, 255, 255, 0.2);
+    --body-color: #2B2B2B;
+    --checkbox: rgb(201, 201, 201);
+    --submit: #0B0A0A;
+    --hr: gray;
+}
+  
+/*========== BUSCAR POSIBLES SOLUCIONES AL FONDO GRIS ==========*/
+html{
+    background-color: #2B2B2B;
+}
+
+
+.main__content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding-top: 3rem;
+}
+
+.text__information-cover{
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text__information-cover h1{
+    font-size: 50px;
+    
+}
+
+.text__information-cover p{
+    font-size: 18px;
+    margin-top: 50px;
+    
+}
+
+/*========== ACOMODAR TODO EL CONTENIDO DEL FORMULARIO EN SU CONTENEDOR ==========*/
+.container__forum{
+    margin-top: 40px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+/* MARGENES, LETRA COLOR DE FONDO Y DISEÑO EXTERIOR DEL CONTENEDOR */
+.container__one{
+    background-color: var(--forum-bgn);
+    max-width: 1200px;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    margin: 25px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px gray;
+
+    /* EFECTO DE CRISTAL */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.container__one hr{
+    background: var(--hr);
+    margin-top: 30px;
+    border: none;
+    height: 0.2px;
+}
+
+.container__name h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container__one p{
+    font-size: 18px;
+    color: var(--title-color);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* ACOMODO DE ESTRUCTURA DE LOS CAMPOS A LLENAR */
+.container__one form .user__details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.container__one form .buttons__category {
+    display: flex;
+}
+
+form .user__details .input__box{
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}
+
+.user__details .input__box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user__details .input__box input,
+.user__details .input__box .menu__country,
+.user__details .input__box .menu__country .cumple{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 300ms ease;
+}
+
+.user__details .input__box .cumple__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* AL SELECCIONAR, SE RESALTA DE UN COLOR MAS FUERTE PARA INDICAR QUE SE ESTA LLENANDO ESE CAMPO */
+.user__details .input__box input:focus,
+.user__details .input__box input:valid,
+.user__details .input__box .menu__country:focus,
+.user__details .input__box .menu__country:valid,
+.user__details .input__box .cumple:focus,
+.user__details .input__box .cumple:valid{
+    border: 1px solid gray;
+    background: white;
+}
+
+#nombre.correcto,
+#apellido.correcto,
+#nacimiento_day.menu__country.cumple.correcto,
+#nacimiento_month.menu__country.cumple.correcto,
+#nacimiento_year.menu__country.cumple.correcto,
+#email.correcto,
+#pais.correcto,
+#verify__image.correcto{
+    border: 3px solid green;
+    background: rgba(239, 254, 239, 0.642);
+}
+
+#nombre.error-mostrar,
+#apellido.error-mostrar,
+#nacimiento_day.menu__country.cumple.error-mostrar,
+#nacimiento_month.menu__country.cumple.error-mostrar,
+#nacimiento_year.menu__country.cumple.error-mostrar,
+#email.error-mostrar,
+#pais.error-mostrar,
+#verify__image.error-mostrar{
+    border: 3px solid red;
+    background: rgba(255, 225, 225, 0.76);
+}
+
+/* VERIFICAR CÓMO QUITAR EL BORDE AL INPUT PARA SELECCIONAR IMAGEN */
+form input[type="file"]{
+    display: none;
+}
+
+form input[type="date"],
+.input__box .details select,
+.input__box .menu__country option{
+    font-family: var(--body-font);
+    color: var(--submit);
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    color: var(--submit);
+    cursor: pointer;
+}
+
+select::-ms-expand{
+    display: none;
+}
+
+.diagnostic__box label{
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--hr);
+    font-size: 20px;
+    color: var(--title-color);
+    box-shadow: 1px 1px 2px var(--title-color);
+    background: var(--forum-bgn);
+    border-bottom-width: 2px;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.diagnostic__box label i{
+    color: var(--title-color);
+    margin-top: 6px;
+}
+
+.diagnostic__box label:hover{
+    box-shadow: 2px 2px 3px var(--title-color);
+    transform: scale(1.05);
+}
+
+/* DISEÑO, ESPACIADO Y COLOCACIÓN DE CÍRCULOS */
+form .sex__box .sex__title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .sex__box .sex__category{
+    display: flex;
+    width: 100%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.sex__box .sex__category label{
+    display: flex;
+    align-items: center;
+}
+
+.sex__box .sex__category .dot{
+    height: 18px;
+    width: 18px;
+    background: var(--checkbox);
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+}
+
+/* MARCA LOS CIRCULOS CLICKEADOS */
+#dot-1:checked ~ .sex__category label .one,
+#dot-2:checked ~ .sex__category label .two,
+#dot-3:checked ~ .sex__category label .three{
+    border-color: var(--checkbox);
+    background: black;
+    transition: all 300ms ease;
+}
+
+/* HACE QUE DESAPAREZCAN LOS CIRCULOS QUE APARECEN ARRIBA DEL SUBTITULO DE SEXO */
+form input[type="radio"]{
+    display: none;
+}
+
+/* DISEÑO Y FUNCIONALIDAD PARA BOTÓN SUBMIT DEL FORMULARIO */
+form .forum__submit {
+    width: 100%;
+    height: 50px;
+    margin: 50px 0;
+}
+
+form .image__test {
+    width: 100%;
+    height: 50px;
+    margin: 50px 0;
+    text-align: end;
+}
+
+.container__one form .forum__submit input{
+    height: 100%;
+    width: 25%;
+    outline: none;
+    color: var(--submit);
+    border: none;
+    background-color: var(--checkbox);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.container__one form .forum__submit input,
+.container__one form .image__test input{
+    height: 100%;
+    width: 45%;
+    outline: none;
+    color: var(--submit);
+    border: none;
+    background-color: var(--checkbox);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.container__one form .forum__submit input:hover{
+    box-shadow: 3px 3px 7px gray;
+    transform: scale(1.05);
+}
+
+form .resultadosdiv {
+    display: none;
+}
+
+/*========== ERRORES Y ALERTAS GENERADOS POR NO LLENAR BIEN EL FORMULARIO <p> ==========*/
+.error{
+    padding: 10px;
+    border: 3px solid red;
+    background-color: rgba(219, 149, 149, 0.76);
+    border-radius: 5px;
+}
+
+.correcto{
+    padding: 10px;
+    border: 5px solid green;
+    background-color: rgba(100, 180, 103, 0.642);
+    border-radius: 5px;
+}
+
+/* AJUSTAR CONTENEDOR PARA DISPOSITIVOS MÓVILES */
+@media screen and (max-width:1200px){
+    .main__content{
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    .container__forum{
+        max-width: 100%;
+        margin-bottom: 200px;
+    }
+
+    .container__one form .forum__submit input,
+    .container__one form .image__test input{
+        width: 100%;
+    }
+
+    .text__information-cover{
+        top: 0;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .text__information-cover h1{
+        font-size: 50px;
+    }
+    
+    .text__information-cover p{
+        font-size: 22px;
+        margin-top: 50px;
+    }
+
+    form .buttons__category {
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+
+    form .forum__submit {
+        height: 50px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    form .image__test {
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:584px){
+    .container__forum{
+        max-width: 100%;
+        margin-bottom: 200px;
+    }
+
+    form .user__details .input__box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .sex__box .sex__category{
+        width: 100%;
+    }
+
+    .container__one form .user__details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user__details::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .sex__category label .sex{
+        font-size: 12px;
+    }
+
+    form .buttons__category{
+        padding-bottom: 30px;
+    }
+
+    .buttons__category .forum__submit input{
+        width: 100%;
+    }
+
+    form .image__test{
+        width: 100%;
+    }
+
+    form .container__one{
+        margin-bottom: 100px;
+    }
+}
