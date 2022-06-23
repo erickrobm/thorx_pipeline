@@ -38,7 +38,7 @@ ThorX Machine Learning Enterprise Model.
 
 ### Creating a Raw Dataset
 
-* The first step is modifying some variables located in `/thorx_pipelines/config/config.py` 
+* The first step is to modify some variables located in `/thorx_pipelines/config/config.py` 
 
     **We highly recomend to only modify the following variables:**
     - MODEL_NAME
@@ -51,9 +51,14 @@ ThorX Machine Learning Enterprise Model.
     - BS
     - EPOCHS
 
-* Create a **Raw Dataset** with the **images path** on the first row and the **original labels** on the second row placing the route `/thorx_pipelines/data` in the **Anaconda Prompt**, and then, run the **make_raw_dataset.py** file with `python make_raw_dataset.py`
+* Once you modify the variables, create a **Raw Dataset** with the **images path** and the **original labels** typping `cd /thorx_pipelines/data` in the **Anaconda Prompt**, and then, run the **make_raw_dataset.py** file with `python make_raw_dataset.py`
 
-### 
+### Creating the Model 
+
+* Go to the folder `/training` and then, run the **train_model.py** file with `python train_model.py` 
+* It can take a while until it finishes all the process.
+
+
 
 
 
