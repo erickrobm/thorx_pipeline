@@ -1,7 +1,7 @@
 # ThorX Project
 ThorX Machine Learning Enterprise Model.
 
-## If you wish to use your GPU, follow this steps:
+## If you are using your GPU, follow this steps:
 
 ### About the Virual Environment
 
@@ -9,7 +9,7 @@ ThorX Machine Learning Enterprise Model.
 * Download the **Anaconda Distribution** on: https://www.anaconda.com/products/distribution
 * Once its dowloaded, open the **Anaconda Prompt** and create the **Anaconda Virtual Environment** with `conda create -n <name> python==3.8.8`. Feel free to select a name for the environment.
 * Open the environment with `conda activate <name>`
-* Install **CudaToolKit** and **Cudnn with** `conda install cudatoolkit=11.0 cudnn=8.0 -c=conda-forge`
+* Install **CudaToolKit** and **Cudnn** with `conda install cudatoolkit=11.0 cudnn=8.0 -c=conda-forge`
 * Install **Tensorflow-Gpu** with `pip install --upgrade tensorflow-gpu==2.4.1`
 
 ### How to verify if Tensorflow-GPU is correctly installed?
@@ -27,12 +27,33 @@ ThorX Machine Learning Enterprise Model.
 * Download the **Anaconda Distribution** on: https://www.anaconda.com/products/distribution
 * Once its dowloaded, open the **Anaconda Prompt** and create the **Anaconda Virtual Environment** with `conda create -n <name> python==3.8.8`. Feel free to select a name for the environment.
 * Open the environment with `conda activate <name>`
-* Install **Tensorflow-Gpu** with `pip install --upgrade tensorflow==2.4.1`
+* Install **Tensorflow** with `pip install --upgrade tensorflow==2.4.1`
 
 ## Installing the libraries
 
 * Once you have completed the previous steps, and still using the **Anaconda Prompt**, go to the folder `/thorx_pipeline`.
-* Install all the libraries in the **virtual environment** with `pip install -r requirements.txt`
+* Install all the libraries in the **Virtual Environment** with `pip install -r requirements.txt`
+
+## About running the project
+
+### Creating a Raw Dataset
+
+* The first step is modifying some variables located in `/thorx_pipelines/config/config.py` 
+
+    **We highly recomend to only modify the following variables:**
+    - MODEL_NAME
+    - TEST_SIZE 
+    - VALIDATION_SIZE
+    - VALIDATION_SPLIT
+    - IMG_RESOLUTION
+    - WIDTH
+    - HEIGHT
+    - BS
+    - EPOCHS
+
+* Create a **Raw Dataset** with the **images path** on the first row and the **original labels** on the second row placing the route `/thorx_pipelines/data` in the **Anaconda Prompt**, and then, run the **make_raw_dataset.py** file with `python make_raw_dataset.py`
+
+### 
 
 
 
