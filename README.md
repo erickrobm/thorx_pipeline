@@ -68,7 +68,7 @@ ThorX Machine Learning Enterprise Model.
 * Go to the folder `/platform` and then, type in the **Anaconda Prompt**: `uvicorn service:app --reload`
 * Install **Visual Studio Code** on: https://code.visualstudio.com/, and then, download the `"PHP Server"` extension.
 * On **Visual Studio Code**, go to the `/thorx_platform` and then select the `forum.php` file.
-* Once opened, right click into it and then it should appear a list. Select the `PHP Server: Serve Project`
+* Once opened, right click into the code displayed and then, it should appear a list. Select the `PHP Server: Serve Project`
 
 
 
