@@ -41,6 +41,7 @@ ThorX Machine Learning Enterprise Model.
 * The first step is to modify some variables located in `/thorx_pipelines/config/config.py` 
 
     **We highly recomend to only modify the following variables:**
+    ```
     - MODEL_NAME
     - TEST_SIZE 
     - VALIDATION_SIZE
@@ -50,6 +51,7 @@ ThorX Machine Learning Enterprise Model.
     - HEIGHT
     - BS
     - EPOCHS
+    ```
 
 * Once you modify the variables, create a **Raw Dataset** with the **images path** and the **original labels** typping `cd /thorx_pipelines/data` in the **Anaconda Prompt**, and then, run the **make_raw_dataset.py** file with `python make_raw_dataset.py`
 
