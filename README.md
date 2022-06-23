@@ -33,7 +33,7 @@ ThorX Machine Learning Enterprise Model.
 * Once you have completed the previous steps, and still using the **Anaconda Prompt**, go to the folder `/thorx_pipeline`.
 * Install all the libraries in the **Virtual Environment** with `pip install -r requirements.txt`
 
-## About running the project (from now and on, we are only going to use Anaconda Prompt)
+## About running the project (from now and on, we are going to use Anaconda Prompt and Visual Studio Code)
 
 ### Creating a Raw Dataset
 
