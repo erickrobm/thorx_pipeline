@@ -29,12 +29,11 @@ ThorX Machine Learning Enterprise Model.
 * Open the environment with `conda activate <name>`
 * Install **Tensorflow** with `pip install --upgrade tensorflow==2.4.1`
 
-## Installing the libraries
-
+## Installing the libraries 
 * Once you have completed the previous steps, and still using the **Anaconda Prompt**, go to the folder `/thorx_pipeline`.
 * Install all the libraries in the **Virtual Environment** with `pip install -r requirements.txt`
 
-## About running the project
+## About running the project (from now and on, we are only going to use Anaconda Prompt)
 
 ### Creating a Raw Dataset
 
@@ -59,6 +58,18 @@ ThorX Machine Learning Enterprise Model.
 
 * Go to the folder `/training` and then, run the **train_model.py** file with `python train_model.py` 
 * It can take a while until it finishes all the process.
+
+### Creating a Predicted Dataset
+
+* Create a **Predicted Dataset** with the **images path**, the **original labels** and **predicted labels** typping `cd /thorx_pipelines/data` in the **Anaconda Prompt**, and then, run the **make_predicted_dataset.py** file with `python make_predicted_dataset.py`
+
+### Predicting Images
+
+* Go to the folder `/platform` and then, type in the **Anaconda Prompt**: `uvicorn service:app --reload`
+* Install **Visual Studio Code** on: https://code.visualstudio.com/, and then, download the `"PHP Server"` extension.
+* On **Visual Studio Code**, go to the `/thorx_platform` and then select the `forum.php` file.
+* Once opened, right click into it and then it should appear a list. Select the `PHP Server: Serve Project`
+
 
 
 
